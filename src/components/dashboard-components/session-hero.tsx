@@ -18,13 +18,12 @@ import { Button } from "@/components/ui/button";
 import {
     UnifiedFilter,
     LimitDropdown,
-    type SearchType,
-    type FilterValue,
+    type SearchType
 } from "@/components/custom-components/filter-bar";
 import { CustomSidebarTrigger } from "@/components/custom-components/custom-sidebar-trigger";
 import Logo from "@/components/custom-components/logo";
-import { Mood } from "@/type/Mood";
-import { MedicalCondition } from "@/type/MedicalCondition";
+import { MOOD_OPTIONS } from "@/type/Mood";
+import { CONDITION_OPTIONS } from "@/type/MedicalCondition";
 
 export interface SessionHeroProps {
     eyebrow?: string;
@@ -38,27 +37,6 @@ export interface SessionHeroProps {
     onToggleSave?: () => void;
     onFiltersChange?: (type: SearchType, value: string | null, limit: number) => void;
 }
-
-const MOOD_OPTIONS: FilterValue[] = [
-    { label: Mood.Happy },
-    { label: Mood.Sad },
-    { label: Mood.Angry },
-    { label: Mood.Romantic },
-];
-
-// ✅ Updated with ALL 10 medical conditions from your ontology
-const CONDITION_OPTIONS: FilterValue[] = [
-    { label: MedicalCondition.ADHD },
-    { label: MedicalCondition.Anxiety },
-    { label: MedicalCondition.Burnout },
-    { label: MedicalCondition.ChronicPain },
-    { label: MedicalCondition.Dementia },
-    { label: MedicalCondition.Depression },
-    { label: MedicalCondition.Dyslexia },
-    { label: MedicalCondition.Insomnia },
-    { label: MedicalCondition.Schizophrenia },
-    { label: MedicalCondition.SevereFatigue },
-];
 
 export function SessionHero({
                                 eyebrow = "Curated session",
